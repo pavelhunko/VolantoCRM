@@ -1,0 +1,26 @@
+@(user: User)
+@import helper._
+@main("VolantoCRM") {
+   <h1 class="floatLeft">@user.name</h1>
+   <p>
+      <b>Name:</b>
+      @user.name
+   </p>
+   <p>
+   <b>Email:</b>
+      @user.email
+   </p>
+   <p>
+      <b>Phone:</b>
+      @user.phone
+   </p>
+   <p>
+      <b>Company Name:</b>
+      @user.companyName
+   </p>
+   <p>
+      <b>Street Address:</b>
+      @user.streetAddress
+   </p>
+   
+}
