@@ -1,4 +1,8 @@
-@(userForm: Form[User])
+@(userForm: play.data.Form[User])
+
+@import helper._
+@import play.api.data.Forms._
+
 @main("VolantoCRM") {
    <h1>New user registration</h1>
    @form(routes.Application.newUser()) {
@@ -7,8 +11,6 @@
       @inputPassword(userForm("password"), '_label -> "Password")
       @inputText(userForm("phone"), '_label -> "Phone")
       @inputText(userForm("companyName"), '_label -> "Company Name")
-      @inputText(userForm("streetAddress"), '_label -> "Street Address")
-      
       <input type="submit" class="btn btn-primary" value="Create User">
    }
    <a href="@routes.Application.index()">Back</a>

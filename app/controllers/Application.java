@@ -1,15 +1,22 @@
 package controllers;
 
+import java.util.List;
+
 import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import play.api.data.Form.*;
 
 public class Application extends Controller {
-
+    //now use sqlite db    
+    static Form<User> userForm = Form.form(User.class);
+    
+    static User user = new User();
+   
     public static Result index() {
-	return ok(views.html.index.render());
+	List<User> users = User.find.all();
+	return ok(views.html.index.render(users));
     }
     
     public static Result register(){
