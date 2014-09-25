@@ -1,11 +1,13 @@
 package models;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import play.db.DB;
 import play.db.ebean.Model;
 
 @Entity
@@ -19,8 +21,7 @@ public class User extends Model {
     public String companyName;
     public String streetAddress;
 
-    javax.sql.DataSource db = DB.getDataSource();
-
+    
     public static Finder<Long, User> find = new Finder(Long.class, User.class);
 
     public static List<User> all() {

@@ -9,7 +9,7 @@ import play.mvc.Result;
 import play.api.data.Form.*;
 
 public class Application extends Controller {
-    //now use sqlite db    
+    //now use in-memory db    
     static Form<User> userForm = Form.form(User.class);
     
     static User user = new User();
